@@ -120,18 +120,20 @@ void display()
 
 int evaluate()
 {
-    int i = 0, num1, num2, result, temp;
+    int i = 0, num1, num2, result;
+    char temp;
     while (postfix[i] != '\0')
     {
-        if (isdigit(postfix[i]))
+        temp=postfix[i];
+        if (isdigit(temp))
         {
-            push(postfix[i] - '0');
+            push(temp - '0');
         }
         else
         {
             num1 = pop();
             num2 = pop();
-            switch (postfix[i])
+            switch (temp)
             {
             case '+':
                 result = num2 + num1;
